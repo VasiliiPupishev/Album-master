@@ -4,7 +4,6 @@ import copy
 import pygame
 from PIL import Image
 import os
-#from skimage.measure import structural_similarity as ssim
 from skimage.measure import compare_ssim as ssim
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,7 +37,6 @@ class Same:
             for i in range(8):
                 for j in range(8):
                     pix = pixels[i, j]
-                    print(pix)
                     res += (pix[0]*j*i + pix[1]*j*i + pix[2]*j*i)
             self.images.append((item, res, True))
             print(item.Name + "  " + str(res))
@@ -56,14 +54,15 @@ class Same:
                 continue
             self.res[image] = []
             image_origin = cv2.imread(os.getcwd() + "\\" + image[0].Location + "\\" + image[0].Name)
+            image_origin = cv2.resize(image_origin, (200, 200))
             image_origin = cv2.cvtColor(image_origin, cv2.COLOR_BGR2GRAY)
             for image1 in self.images:
                 image1_origin = cv2.imread(os.getcwd() + "\\" + image1[0].Location + "\\" + image1[0].Name)
+                image1_origin = cv2.resize(image1_origin, (200, 200))
                 image1_origin = cv2.cvtColor(image1_origin, cv2.COLOR_BGR2GRAY)
-                res = self.mse(image_origin, image1_origin)
+                res = ssim(image_origin, image1_origin)
                 print(res)
-                #if image1[2] and image1[1] - image1[1] * per / 2 <= image[1] <= image1[1] + image1[1] * per / 2:
-                if image1[2] and res == 1:
+                if image1[2] and res >= 1 - per:
                     self.res[image].append(image1)
 
     def in_res(self, item):
@@ -75,11 +74,15 @@ class Same:
                     return False
         return True
 
+
+
+
     def mse(self, imageA, imageB):
+        print(type(imageA))
         # the 'Mean Squared Error' between the two images is the
         # sum of the squared difference between the two images;
         # NOTE: the two images must have the same dimension
-        err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
+        err = np.sum((imageA.astype('float') - imageB.astype('float')) ** 2)
         err /= float(imageA.shape[0] * imageA.shape[1])
 
         # return the MSE, the lower the error, the more "similar"

@@ -58,7 +58,10 @@ def main():
                     find_copy(root, 0)
                 if event.key == pygame.K_F2:
                     root.ALGS = True
-                    find_copy(root, 0.02)
+                    find_copy(root, 0.27)
+                if event.key == pygame.K_F3:
+                    root.ALGS = True
+                    find_copy(root, 0.5)
         pygame.display.update()
     pygame.quit()
     sys.exit()
