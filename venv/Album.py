@@ -25,7 +25,6 @@ class Album:
 
     def add_item(self, item):
         for list in self.Items:
-            print(len(list))
             if len(list) < 28:
                 list.append(item)
                 return

@@ -11,11 +11,16 @@ import cv2
 
 
 class Same:
-    items = []
-    images = []
-    res = {}
+    items = None
+    images = None
+    res = None
+    Album = None
 
     def __init__(self, root):
+        self.res = {}
+        self.images = []
+        self.items = []
+        self.Album = Album("name", "location")
         if root.Current_Album is None:
             for line in root.Albums:
                 for album in line:
@@ -27,43 +32,24 @@ class Same:
                 for item in list:
                     self.items.append(item)
 
-    def find_same(self):
-        for item in self.items:
-            image = Image.open(os.getcwd() + "\\" + item.Location + "\\" + item.Name)
-            image = image.resize((8, 8), Image.ANTIALIAS)
-            image.convert('1')
-            pixels = image.load()
-            res = 0
-            for i in range(8):
-                for j in range(8):
-                    pix = pixels[i, j]
-                    res += (pix[0]*j*i + pix[1]*j*i + pix[2]*j*i)
-            self.images.append((item, res, True))
-            print(item.Name + "  " + str(res))
-
     def find_copy(self, per):
-        self.find_same()
-        #original = cv2.imread("images/jp_gates_original.png")
-        #contrast = cv2.imread("images/jp_gates_contrast.png")
-        #shopped = cv2.imread("images/jp_gates_photoshopped.png")
-        #original = cv2.cvtColor(original, cv2.COLOR_BGR2GRAY)
-        #contrast = cv2.cvtColor(contrast, cv2.COLOR_BGR2GRAY)
-        #shopped = cv2.cvtColor(shopped, cv2.COLOR_BGR2GRAY)
-        for image in self.images:
+        for image in self.items:
             if not self.in_res(image):
                 continue
             self.res[image] = []
-            image_origin = cv2.imread(os.getcwd() + "\\" + image[0].Location + "\\" + image[0].Name)
+            image_origin = cv2.imread(os.getcwd() + "\\" + image.Location + "\\" + image.Name)
             image_origin = cv2.resize(image_origin, (200, 200))
             image_origin = cv2.cvtColor(image_origin, cv2.COLOR_BGR2GRAY)
-            for image1 in self.images:
-                image1_origin = cv2.imread(os.getcwd() + "\\" + image1[0].Location + "\\" + image1[0].Name)
+            for image1 in self.items:
+                image1_origin = cv2.imread(os.getcwd() + "\\" + image1.Location + "\\" + image1.Name)
                 image1_origin = cv2.resize(image1_origin, (200, 200))
                 image1_origin = cv2.cvtColor(image1_origin, cv2.COLOR_BGR2GRAY)
                 res = ssim(image_origin, image1_origin)
                 print(res)
-                if image1[2] and res >= 1 - per:
+                if res >= 1 - per:
                     self.res[image].append(image1)
+                    self.Album.add_item(image1)
+                    #self.Items.add_item(image1)
 
     def in_res(self, item):
         for key in self.res.keys():
@@ -74,6 +60,21 @@ class Same:
                     return False
         return True
 
+    def add_item(self, item):
+        for list in self.Items:
+            if len(list) < 28:
+                list.append(item)
+                return
+        self.Items.append([item])
+
+    def get_items(self):
+        for key in self.res.keys():
+            for item in self.res[key]:
+                for list in self.Items:
+                    if len(list) < 28:
+                        list.append(item)
+                    else:
+                        self.Items.append([])
 
 
 

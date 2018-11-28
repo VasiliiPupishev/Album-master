@@ -71,7 +71,9 @@ def find_copy(root, per):
     from FindSame import Same
     same = Same(root)
     same.find_copy(per)
-    draw_algs(same.res)
+    #draw_algs(same.res)
+    print_albums(same.Album)
+    root.Current_Album = same.Album
 
 
 def get_delta(image_rect):
@@ -102,7 +104,7 @@ def draw_algs(dir):
     i = 0
     for key in dir:
         for tup in dir[key]:
-            item = tup[0]
+            item = tup
             image = item.Image
             image_rect = image.get_rect()
             delta_x, delta_y = get_delta(image_rect)
@@ -183,6 +185,11 @@ def draw_loading():
 
 def search_event(root, pos):
     x, y = pos
+    if root.ALGS and y < 33 and x < 33:
+        root.ALGS = False
+        print_albums(root)
+        root.Current_Album = None
+        return
     if y < 33 and x < 33 and root.Current_Album is not None:
         print_albums(root)
         root.Current_Album.MousePointer = None
