@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
+#https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
+
 
 class Same:
     items = None

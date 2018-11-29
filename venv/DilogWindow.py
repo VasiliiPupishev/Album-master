@@ -1,29 +1,46 @@
 import sys
-from PyQt5.QtWidgets import (QWidget, QPushButton, QLineEdit, QInputDialog, QApplication)
+from PyQt4 import QtGui
 
 
-class DilogWindow(QWidget):
+class Widget(QtGui.QDialog):
+    def __init__(self, parent=None):
+        QtGui.QDialog.__init__(parent)
 
-    def __init__(self):
-        super().__init__()
-        self.initUI()
+        grid = QtGui.QGridLayout()
+        grid.setSpacing(3)
 
-    def initUI(self):
-        self.btn = QPushButton('Dialog', self)
-        self.btn.move(20, 20)
-        self.btn.clicked.connect(self.showDialog)
-        self.le = QLineEdit(self)
-        self.le.move(130, 22)
-        self.setGeometry(300, 300, 290, 150)
-        self.setWindowTitle('Input dialog')
-        self.show()
+        self.edit_first = QtGui.QLineEdit()
+        grid.addWidget(QtGui.QLabel('Question 1'), 1, 0)
+        grid.addWidget(self.edit_first, 1, 1)
 
-    def showDialog(self):
-        text, ok = QInputDialog.getText(self, 'Input Dialog', 'Enter your name:')
-        if ok:
-            self.le.setText(str(text))
+        #   add layout for second widget
+        self.edit_second = QtGui.QLineEdit()
+        grid.addWidget(QtGui.QLabel('Question 2'), 2, 0)
+        grid.addWidget(self.edit_second, 2, 1)
 
-    def run(self):
-        app = QApplication(sys.argv)
-        ex = self()
-        sys.exit(app.exec_())
+        apply_button = QtGui.QPushButton('Apply', self)
+        apply_button.clicked.connect(self.close)
+
+        grid.addWidget(apply_button, 4, 3)
+        self.setLayout(grid)
+        self.setGeometry(300, 300, 350, 300)
+
+    def return_strings(self):
+        #   Return list of values. It need map with str (self.lineedit.text() will return QString)
+        return map(str, [self.q1Edit.text(), self.q2Edit.text()])
+
+    @staticmethod
+    def get_data(parent=None):
+        dialog = Widget(parent)
+        dialog.exec_()
+        return dialog.return_strings()
+
+
+def main():
+    app = QtGui.QApplication([])
+    window = Widget()
+    print(window.get_data())  # window is value from edit field
+
+
+if __name__ == '__main__':
+    main()

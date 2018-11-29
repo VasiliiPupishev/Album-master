@@ -71,7 +71,6 @@ def find_copy(root, per):
     from FindSame import Same
     same = Same(root)
     same.find_copy(per)
-    #draw_algs(same.res)
     print_albums(same.Album)
     root.Current_Album = same.Album
 
@@ -86,46 +85,6 @@ def get_delta(image_rect):
         delta_y = 1
         delta_x = image_rect[2] / image_rect[3]
     return delta_x, delta_y
-
-
-def draw_algs(dir):
-    background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
-    background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
-    font = pygame.font.SysFont('arial', 20)
-    loading_caption = font.render("Copy", False, (0, 0, 0))
-    screen.blit(background_image, (0, 0))
-    screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 60, 5))
-    pygame.display.update()
-    draw_menu()
-    plate = pygame.image.load("Backgrounds/plate.png")
-    plate = pygame.transform.scale(plate, PLATE_SIZE)
-    indent_x = RETREAT[0]
-    indent_y = RETREAT[1]
-    i = 0
-    for key in dir:
-        for tup in dir[key]:
-            item = tup
-            image = item.Image
-            image_rect = image.get_rect()
-            delta_x, delta_y = get_delta(image_rect)
-            temp_x = int(image_size[0] * delta_x)
-            temp_y = int(image_size[1] * delta_y)
-            image = pygame.transform.scale(image, (temp_x, temp_y))
-            (x, y) = get_coordinate(indent_x, indent_y, image.get_rect())
-            item.set_position(x, y)
-            screen.blit(plate, (indent_x, indent_y))
-            screen.blit(image, (x, y))
-            caption = get_caption(item.Name)
-            screen.blit(caption[1], (indent_x + caption[0], indent_y + PLATE_SIZE[1]))
-            indent_x = indent_x + PLATE_SIZE[0] + 30
-            i += 1
-            if i > 6:
-                i = 0
-                indent_x = RETREAT[0]
-                indent_y = indent_y + PLATE_SIZE[1] + 25
-        i = 0
-        indent_x = RETREAT[0]
-        indent_y = indent_y + PLATE_SIZE[1] + 25
 
 
 def rename_item(root):
