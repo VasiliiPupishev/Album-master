@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/FindSame.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/FindSame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -189,7 +191,7 @@
       <workItem from="1543204541802" duration="4127000" />
       <workItem from="1543305314193" duration="19083000" />
       <workItem from="1543383473610" duration="6949000" />
-      <workItem from="1543427664557" duration="27199000" />
+      <workItem from="1543427664557" duration="27878000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -247,22 +249,28 @@
       <option name="project" value="LOCAL" />
       <updated>1543505029003</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="nicejjjj">
+      <created>1543844754022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1543844754022</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59368000" />
+    <option name="totallyTimeSpent" value="60047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20574887" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20574887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64977306" visible="true" weight="0.28878647" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64977306" visible="true" weight="0.28878647" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924356" weight="0.39938557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -313,7 +321,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="photo album" />
     <MESSAGE value="nice" />
-    <option name="LAST_COMMIT_MESSAGE" value="nice" />
+    <MESSAGE value="nicejjjj" />
+    <option name="LAST_COMMIT_MESSAGE" value="nicejjjj" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
@@ -365,7 +374,7 @@
     <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

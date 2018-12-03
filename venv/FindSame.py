@@ -51,7 +51,6 @@ class Same:
                 if res >= 1 - per:
                     self.res[image].append(image1)
                     self.Album.add_item(image1)
-                    #self.Items.add_item(image1)
 
     def in_res(self, item):
         for key in self.res.keys():
@@ -62,56 +61,27 @@ class Same:
                     return False
         return True
 
-    def add_item(self, item):
-        for list in self.Items:
-            if len(list) < 28:
-                list.append(item)
-                return
-        self.Items.append([item])
+    @staticmethod
+    def print_filter(screen):
+        print("helllo")
+        background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
+        background_image = pygame.transform.scale(background_image, (1000, 600))
+        font = pygame.font.SysFont('arial', 20) #name caption
+        loading_caption = font.render("Set up filter.", False, (0, 0, 0))
+        screen.blit(background_image, (0, 0))
+        screen.blit(loading_caption, (500-70, 10))
+        font = pygame.font.SysFont('arial', 30)  # name caption
+        loading_caption = font.render("Find with full similarity", False, (0, 0, 0)) #grouping in albums
+        screen.blit(loading_caption, (40, 100))
+        loading_caption = font.render("Find with 75% similarity", False, (0, 0, 0))  # grouping in albums
+        screen.blit(loading_caption, (40, 200))
+        loading_caption = font.render("Find with 50% similarity", False, (0, 0, 0))  # grouping in albums
+        screen.blit(loading_caption, (40, 300))
+        font = pygame.font.SysFont('arial', 15)  # name caption
+        loading_caption = font.render("Group in albums", False, (0, 0, 0))  # grouping in albums
+        screen.blit(loading_caption, (40, 400))
+        #---------------------------------------------------------------------------------------------------------------
 
-    def get_items(self):
-        for key in self.res.keys():
-            for item in self.res[key]:
-                for list in self.Items:
-                    if len(list) < 28:
-                        list.append(item)
-                    else:
-                        self.Items.append([])
 
 
-
-    def mse(self, imageA, imageB):
-        print(type(imageA))
-        # the 'Mean Squared Error' between the two images is the
-        # sum of the squared difference between the two images;
-        # NOTE: the two images must have the same dimension
-        err = np.sum((imageA.astype('float') - imageB.astype('float')) ** 2)
-        err /= float(imageA.shape[0] * imageA.shape[1])
-
-        # return the MSE, the lower the error, the more "similar"
-        # the two images are
-        return err
-
-    def compare_images(self, imageA, imageB, title):
-        # compute the mean squared error and structural similarity
-        # index for the images
-        m = mse(imageA, imageB)
-        s = ssim(imageA, imageB)
-
-        # setup the figure
-        fig = plt.figure(title)
-        plt.suptitle("MSE: %.2f, SSIM: %.2f" % (m, s))
-
-        # show first image
-        ax = fig.add_subplot(1, 2, 1)
-        plt.imshow(imageA, cmap=plt.cm.gray)
-        plt.axis("off")
-
-        # show the second image
-        ax = fig.add_subplot(1, 2, 2)
-        plt.imshow(imageB, cmap=plt.cm.gray)
-        plt.axis("off")
-
-        # show the images
-        plt.show()
 

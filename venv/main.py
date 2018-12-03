@@ -55,24 +55,26 @@ def main():
                     rename_item(root)
                 if event.key == pygame.K_F1:
                     root.ALGS = True
-                    find_copy(root, 0)
+                    find_copy(root, 0, screen)
                 if event.key == pygame.K_F2:
                     root.ALGS = True
-                    find_copy(root, 0.27)
+                    find_copy(root, 0.27, screen)
                 if event.key == pygame.K_F3:
                     root.ALGS = True
-                    find_copy(root, 0.5)
+                    find_copy(root, 0.5, screen)
         pygame.display.update()
     pygame.quit()
     sys.exit()
 
 
-def find_copy(root, per):
+def find_copy(root, per, screen):
     from FindSame import Same
     same = Same(root)
-    same.find_copy(per)
-    print_albums(same.Album)
-    root.Current_Album = same.Album
+    same.print_filter(screen)
+    #time.sleep(10)
+    #same.find_copy(per)
+    #print_albums(same.Album)
+    #root.Current_Album = same.Album
 
 
 def get_delta(image_rect):
