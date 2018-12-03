@@ -17,6 +17,7 @@ class Same:
     images = None
     res = None
     Album = None
+    Flag = False
 
     def __init__(self, root):
         self.res = {}
@@ -61,17 +62,50 @@ class Same:
                     return False
         return True
 
-    @staticmethod
-    def print_filter(screen):
-        print("helllo")
+    def print_filter(self, screen):
+        self.screen_draw(screen)
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    return
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        self.search_events(event.pos, screen)
+            pygame.display.update()
+
+    def search_events(self, pos, screen):
+        x, y = pos
+        if 170 < x < 190:
+            if 400 < y < 420:
+                if not self.Flag:
+                    self.Flag = True
+                    button = pygame.image.load("Backgrounds/back.png")
+                    button = pygame.transform.scale(button, (19, 19))
+                    button = pygame.transform.rotate(button, 90)
+                    screen.blit(button, (170, 400))
+                else:
+                    self.Flag = False
+                    self.screen_draw(screen)
+        if 750 < x < 850:
+            if 100 < y < 140:
+                print("button 1")
+                self.find_copy(0)
+            if 200 < y < 240:
+                print("button 2")
+                self.find_copy(0.27)
+            if 300 < y < 340:
+                print("button 3")
+                self.find_copy(0.5)
+
+    def screen_draw(self, screen):
         background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
         background_image = pygame.transform.scale(background_image, (1000, 600))
-        font = pygame.font.SysFont('arial', 20) #name caption
+        font = pygame.font.SysFont('arial', 20)  # name caption
         loading_caption = font.render("Set up filter.", False, (0, 0, 0))
         screen.blit(background_image, (0, 0))
-        screen.blit(loading_caption, (500-70, 10))
+        screen.blit(loading_caption, (430, 10))
         font = pygame.font.SysFont('arial', 30)  # name caption
-        loading_caption = font.render("Find with full similarity", False, (0, 0, 0)) #grouping in albums
+        loading_caption = font.render("Find with full similarity", False, (0, 0, 0))  # grouping in albums
         screen.blit(loading_caption, (40, 100))
         loading_caption = font.render("Find with 75% similarity", False, (0, 0, 0))  # grouping in albums
         screen.blit(loading_caption, (40, 200))
@@ -80,8 +114,17 @@ class Same:
         font = pygame.font.SysFont('arial', 15)  # name caption
         loading_caption = font.render("Group in albums", False, (0, 0, 0))  # grouping in albums
         screen.blit(loading_caption, (40, 400))
-        #---------------------------------------------------------------------------------------------------------------
-
-
-
-
+        # ---------------------------------------------------------------------------------------------------------------
+        button = pygame.image.load("Backgrounds/plate.png")
+        font = pygame.font.SysFont('arial', 20)
+        button = pygame.transform.scale(button, (100, 40))
+        loading_caption = font.render("Start", False, (0, 0, 0))  # grouping in albums
+        screen.blit(loading_caption, (780, 110))
+        screen.blit(button, (750, 100))
+        screen.blit(loading_caption, (780, 210))
+        screen.blit(button, (750, 200))
+        screen.blit(loading_caption, (780, 310))
+        screen.blit(button, (750, 300))
+        button = pygame.image.load("Backgrounds/sq.png")
+        button = pygame.transform.scale(button, (19, 19))
+        screen.blit(button, (170, 400))
