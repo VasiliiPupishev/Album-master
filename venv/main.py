@@ -192,6 +192,10 @@ def draw_menu():
     screen.blit(back_image, (5, SCREEN_RESOLUTION[1] - 35))
     back_image = pygame.transform.rotate(back_image, 180)
     screen.blit(back_image, (SCREEN_RESOLUTION[0]-35, SCREEN_RESOLUTION[1]-35))
+    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.transform.scale(back_image, (30, 30))
+    screen.blit(back_image, (SCREEN_RESOLUTION[0] - 75, SCREEN_RESOLUTION[1] - 35))
+
 
 
 def get_coordinate(x, y, rect):
