@@ -28,6 +28,7 @@ def main():
     background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
     font = pygame.font.SysFont('arial', 30)
     root = Root(DIR, "Images")
+    lst = get_lst("config")
     root.init("Images", root.Albums[0], True)
     print(len(root.Albums[0]))
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
@@ -67,14 +68,32 @@ def main():
     sys.exit()
 
 
+def get_lst(name):
+    f = open(name)
+    string = f.read()
+    st = string.split('*')
+    res = []
+    temp = []
+    for note in st:
+        first = True
+        spis = []
+        for line in note:
+            if first:
+                first = False
+                ln = line.split(' ')
+                loc = ln[0]
+                nm = ln[1]
+            spis.append(line)
+
+
+
+
 def find_copy(root, per, screen):
     from FindSame import Same
     same = Same(root)
     same.print_filter(screen)
-    #time.sleep(10)
-    #same.find_copy(per)
-    #print_albums(same.Album)
-    #root.Current_Album = same.Album
+    print_albums(same.Album)
+    root.Current_Album = same.Album
 
 
 def get_delta(image_rect):
