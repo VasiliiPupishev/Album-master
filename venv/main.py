@@ -56,13 +56,7 @@ def main():
                     rename_item(root)
                 if event.key == pygame.K_F1:
                     root.ALGS = True
-                    find_copy(root, 0, screen)
-                if event.key == pygame.K_F2:
-                    root.ALGS = True
-                    find_copy(root, 0.27, screen)
-                if event.key == pygame.K_F3:
-                    root.ALGS = True
-                    find_copy(root, 0.5, screen)
+                    find_copy(root, screen)
         pygame.display.update()
     pygame.quit()
     sys.exit()
@@ -86,14 +80,17 @@ def get_lst(name):
             spis.append(line)
 
 
-
-
-def find_copy(root, per, screen):
+def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
-    same.print_filter(screen)
-    print_albums(same.Album)
-    root.Current_Album = same.Album
+    if same.print_filter(screen, root):
+        if root.Current_Album is not None:
+            print_albums(root.Current_Album)
+        else:
+            print_albums(root)
+    else:
+        print_albums(same.Album)
+        root.Current_Album = same.Album
 
 
 def get_delta(image_rect):
@@ -193,6 +190,12 @@ def search_event(root, pos):
         if next_album is not None:
             root.Current_Album = next_album
             print_albums(next_album)
+    if 955 > x > 925:
+        if 594 > y > 564:
+            draw_loading()
+            root.ALGS = True
+            find_copy(root, screen)
+
 
 
 def get_album(albums, event_position):
@@ -211,6 +214,9 @@ def draw_menu():
     screen.blit(back_image, (5, SCREEN_RESOLUTION[1] - 35))
     back_image = pygame.transform.rotate(back_image, 180)
     screen.blit(back_image, (SCREEN_RESOLUTION[0]-35, SCREEN_RESOLUTION[1]-35))
+    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.transform.scale(back_image, (30, 30))
+    screen.blit(back_image, (925, 564))
 
 
 def get_coordinate(x, y, rect):

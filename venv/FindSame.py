@@ -18,11 +18,13 @@ class Same:
     res = None
     Album = None
     Flag = False
+    Albums = None
 
     def __init__(self, root):
         self.res = {}
         self.images = []
         self.items = []
+        self.Albums = []
         self.Album = Album("name", "location")
         if root.Current_Album is None:
             for line in root.Albums:
@@ -43,6 +45,7 @@ class Same:
             image_origin = cv2.imread(os.getcwd() + "\\" + image.Location + "\\" + image.Name)
             image_origin = cv2.resize(image_origin, (200, 200))
             image_origin = cv2.cvtColor(image_origin, cv2.COLOR_BGR2GRAY)
+            temp = Album("location", "set1")
             for image1 in self.items:
                 image1_origin = cv2.imread(os.getcwd() + "\\" + image1.Location + "\\" + image1.Name)
                 image1_origin = cv2.resize(image1_origin, (200, 200))
@@ -52,6 +55,8 @@ class Same:
                 if res >= 1 - per:
                     self.res[image].append(image1)
                     self.Album.add_item(image1)
+                    temp.add_item(image1)
+            self.Albums.append(temp)
 
     def in_res(self, item):
         for key in self.res.keys():
@@ -62,7 +67,7 @@ class Same:
                     return False
         return True
 
-    def print_filter(self, screen):
+    def print_filter(self, screen, root):
         self.screen_draw(screen)
         while True:
             for event in pygame.event.get():
@@ -70,11 +75,19 @@ class Same:
                     return
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
-                        if self.search_events(event.pos, screen):
-                            return
+                        if self.search_events(event.pos, screen, root):
+                            if self.Flag:
+                                if root.Current_Album is None:
+                                    for item in self.Albums:
+                                        root.Albums.append(item)
+                                else:
+                                    for item in self.Albums:
+                                        root.Current_Album.Items.append(item)
+                                return True
+                            return False
             pygame.display.update()
 
-    def search_events(self, pos, screen):
+    def search_events(self, pos, screen, root):
         x, y = pos
         if 170 < x < 190:
             if 400 < y < 420:
