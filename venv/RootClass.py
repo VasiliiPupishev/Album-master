@@ -35,3 +35,7 @@ class Root:
                     current_album.add_item(Item(image, item, directory))
                 except Exception:
                     continue
+
+    def is_album(self, loc, name):
+        return
+
