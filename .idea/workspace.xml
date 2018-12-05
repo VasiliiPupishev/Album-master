@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/FindSame.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/FindSame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,15 +12,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1543921800866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1543995954719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="194" column="26" selection-start-line="194" selection-start-column="26" selection-end-line="194" selection-end-column="26" />
+            <state relative-caret-position="146">
+              <caret line="169" column="30" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -34,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/venv/DilogWindow.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="279">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -68,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-850">
-              <caret line="85" column="43" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -106,10 +104,10 @@
       <list>
         <option value="$PROJECT_DIR$/venv/DilogWindow.py" />
         <option value="$PROJECT_DIR$/venv/config" />
-        <option value="$PROJECT_DIR$/venv/RootClass.py" />
         <option value="$PROJECT_DIR$/venv/Album.py" />
-        <option value="$PROJECT_DIR$/venv/FindSame.py" />
         <option value="$PROJECT_DIR$/venv/main.py" />
+        <option value="$PROJECT_DIR$/venv/RootClass.py" />
+        <option value="$PROJECT_DIR$/venv/FindSame.py" />
       </list>
     </option>
   </component>
@@ -210,7 +208,8 @@
       <workItem from="1543204541802" duration="4127000" />
       <workItem from="1543305314193" duration="19083000" />
       <workItem from="1543383473610" duration="6949000" />
-      <workItem from="1543427664557" duration="44541000" />
+      <workItem from="1543427664557" duration="46012000" />
+      <workItem from="1543989476040" duration="3605000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -296,22 +295,29 @@
       <option name="project" value="LOCAL" />
       <updated>1543917625839</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="nicejjjj">
+      <created>1543921885012</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543921885012</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76710000" />
+    <option name="totallyTimeSpent" value="81786000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19288956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64826024" visible="true" weight="0.28878647" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6475038" visible="true" weight="0.28878647" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.698941" weight="0.39938557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,7 +325,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3517398" side_tool="true" visible="true" weight="0.28878647" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3524962" side_tool="true" weight="0.40092167" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32872504" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32872504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -369,6 +375,19 @@
     <entry file="file://$PROJECT_DIR$/venv/pyvenv.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/DilogWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Item.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/pygame/ftfont.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -376,25 +395,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Item.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/config">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/DilogWindow.py">
+    <entry file="file://$PROJECT_DIR$/venv/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="146">
+          <caret line="169" column="30" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -409,22 +415,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
+    <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
-          <caret line="85" column="43" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="43" />
+        <state relative-caret-position="279">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/main.py">
+    <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="194" column="26" selection-start-line="194" selection-start-column="26" selection-end-line="194" selection-end-column="26" />
+        <state relative-caret-position="136">
+          <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
