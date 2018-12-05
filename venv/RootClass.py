@@ -36,6 +36,9 @@ class Root:
                 except Exception:
                     continue
 
+    def add_album(self, album):
+        self.Albums.append(album)
+
     def is_album(self, loc, name):
         return
 

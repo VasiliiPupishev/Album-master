@@ -2,6 +2,7 @@ from RootClass import Root
 from Album import Album
 import copy
 import pygame
+from Item import Item
 from PIL import Image
 import os
 from skimage.measure import compare_ssim as ssim
@@ -39,7 +40,7 @@ class Same:
 
     def find_copy(self, per):
         for image in self.items:
-            if not self.in_res(image):
+            if not self.in_res(image) or type(image) is not Item:
                 continue
             self.res[image] = []
             image_origin = cv2.imread(os.getcwd() + "\\" + image.Location + "\\" + image.Name)
@@ -79,10 +80,12 @@ class Same:
                             if self.Flag:
                                 if root.Current_Album is None:
                                     for item in self.Albums:
-                                        root.Albums.append(item)
+                                        print("add " + str(item))
+                                        root.add_album(item)
                                 else:
                                     for item in self.Albums:
-                                        root.Current_Album.Items.append(item)
+                                        print("add " + str(item))
+                                        root.Current_Album.add_item(item)
                                 return True
                             return False
             pygame.display.update()

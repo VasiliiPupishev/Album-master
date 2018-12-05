@@ -164,8 +164,10 @@ def search_event(root, pos):
     x, y = pos
     if root.ALGS and y < 33 and x < 33:
         root.ALGS = False
-        print_albums(root)
-        root.Current_Album = None
+        if root.Current_Album is not None:
+            print_albums(root.Current_Album)
+        else:
+            print_albums(root)
         return
     if y < 33 and x < 33 and root.Current_Album is not None:
         print_albums(root)
@@ -183,8 +185,11 @@ def search_event(root, pos):
     if root.Current_Album is not None:
         item = get_album(root.Current_Album.Items[root.Current_Album.Pointer], pos)
         if item is not None:
-            path = os.path.abspath(item.Location + "/" + item.Name)
-            os.startfile(path)
+            if type(item) is Item:
+                path = os.path.abspath(item.Location + "/" + item.Name)
+                os.startfile(path)
+            else:
+                print_albums(item)
     else:
         next_album = get_album(root.Albums[0], pos)
         if next_album is not None:
@@ -251,6 +256,7 @@ def print_albums(album):
     indent_y = RETREAT[1]
     i = 0
     for item in current_album:
+        print(type(item))
         album_image = item.Image
         image_rect = album_image.get_rect()  # scaling
         delta_x, delta_y = get_delta(image_rect)
