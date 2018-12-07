@@ -27,18 +27,19 @@ class Same:
         self.items = []
         self.Albums = []
         self.Album = Album("name", "location")
-        if root.Current_Album is None:
+        if root.get_current_album(False) is None:
             for line in root.Albums:
                 for album in line:
                     for list in album.Items:
                         for item in list:
                             self.items.append(item)
         else:
-            for list in root.Current_Album.Items:
+            for list in root.get_current_album(False).Items:
                 for item in list:
                     self.items.append(item)
 
     def find_copy(self, per):
+        number = 0
         for image in self.items:
             if not self.in_res(image) or type(image) is not Item:
                 continue
@@ -46,13 +47,14 @@ class Same:
             image_origin = cv2.imread(os.getcwd() + "\\" + image.Location + "\\" + image.Name)
             image_origin = cv2.resize(image_origin, (200, 200))
             image_origin = cv2.cvtColor(image_origin, cv2.COLOR_BGR2GRAY)
-            temp = Album("location", "set1")
+            temp = Album("set №" + str(number), "set1")
+            number += 1
             for image1 in self.items:
                 image1_origin = cv2.imread(os.getcwd() + "\\" + image1.Location + "\\" + image1.Name)
                 image1_origin = cv2.resize(image1_origin, (200, 200))
                 image1_origin = cv2.cvtColor(image1_origin, cv2.COLOR_BGR2GRAY)
                 res = ssim(image_origin, image1_origin)
-                print(res)
+                #print(res)
                 if res >= 1 - per:
                     self.res[image].append(image1)
                     self.Album.add_item(image1)
@@ -78,14 +80,14 @@ class Same:
                     if event.button == 1:
                         if self.search_events(event.pos, screen, root):
                             if self.Flag:
-                                if root.Current_Album is None:
+                                if root.get_current_album(False) is None:
                                     for item in self.Albums:
-                                        print("add " + str(item))
+                                        #print("add " + str(item))
                                         root.add_album(item)
                                 else:
                                     for item in self.Albums:
-                                        print("add " + str(item))
-                                        root.Current_Album.add_item(item)
+                                        #print("add " + str(item))
+                                        root.get_current_album(False).add_item(item)
                                 return True
                             return False
             pygame.display.update()

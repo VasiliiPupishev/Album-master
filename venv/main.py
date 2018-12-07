@@ -28,9 +28,8 @@ def main():
     background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
     font = pygame.font.SysFont('arial', 30)
     root = Root(DIR, "Images")
-    lst = get_lst("config")
     root.init("Images", root.Albums[0], True)
-    print(len(root.Albums[0]))
+    #print(len(root.Albums[0]))
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
     screen.blit(background_image, (0, 0))
     screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 50, int(SCREEN_RESOLUTION[1] / 2) - 10))
@@ -62,35 +61,17 @@ def main():
     sys.exit()
 
 
-def get_lst(name):
-    f = open(name)
-    string = f.read()
-    st = string.split('*')
-    res = []
-    temp = []
-    for note in st:
-        first = True
-        spis = []
-        for line in note:
-            if first:
-                first = False
-                ln = line.split(' ')
-                loc = ln[0]
-                nm = ln[1]
-            spis.append(line)
-
-
 def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
     if same.print_filter(screen, root):
-        if root.Current_Album is not None:
-            print_albums(root.Current_Album)
+        if root.get_current_album(False) is not None:
+            print_albums(root.get_current_album(False))
         else:
             print_albums(root)
     else:
         print_albums(same.Album)
-        root.Current_Album = same.Album
+        root.add_current_album(same.Album)
 
 
 def get_delta(image_rect):
@@ -106,8 +87,8 @@ def get_delta(image_rect):
 
 
 def rename_item(root):
-    if root.Current_Album is not None:
-        if root.Current_Album.MousePointer is not None:
+    if root.get_current_album(False) is not None:
+        if root.get_current_album(False).MousePointer is not None:
             return
 
 
@@ -117,17 +98,20 @@ def move_item(root):
         return
     for i in root.Buffer:
         item = i[0]
-        shutil.move(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.Current_Album.Location)
-        root.Current_Album.add_item(item)
+        try:
+            shutil.move(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.get_current_album(False).Location)
+        except Exception:
+            print("oooops")
+        root.get_current_album(False).add_item(item)
         i[1].del_item(item)
     root.Buffer.clear()
-    print_albums(root.Current_Album)
+    print_albums(root.get_current_album(False))
 
 
 def copy_item(root):
-    if root.Current_Album.MousePointer is not None:
+    if root.get_current_album(False).MousePointer is not None:
         root.Buffer.clear()
-        root.Buffer.append((root.Current_Album.MousePointer, root.Current_Album))
+        root.Buffer.append((root.get_current_album(False).MousePointer, root.get_current_album(False)))
 
 
 def paste_item(root):
@@ -135,19 +119,22 @@ def paste_item(root):
         import shutil
         for i in root.Buffer:
             item = i[0]
-            shutil.copy(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.Current_Album.Location + "/" + item.Name[:-4] + "copy.jpg", follow_symlinks=True)
-            root.Current_Album.add_item(item)
+            try:
+                shutil.copy(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.get_current_album(False).Location + "/" + item.Name[:-4] + "copy.jpg", follow_symlinks=True)
+            except Exception:
+                print("ooooops")
+            root.get_current_album(False).add_item(item)
         root.Buffer.clear()
-        print_albums(root.Current_Album)
+        print_albums(root.get_current_album(False))
 
 
 def set_mouse_pointer(root, pos):
-    if root.Current_Album is None:
+    if root.get_current_album(False) is None:
         return
-    item = get_album(root.Current_Album.Items[root.Current_Album.Pointer], pos)
+    item = get_album(root.get_current_album(False).Items[root.get_current_album(False).Pointer], pos)
     if item is not None:
-        root.Current_Album.MousePointer = item
-        print_albums(root.Current_Album)
+        root.get_current_album(False).MousePointer = item
+        print_albums(root.get_current_album(False))
 
 
 def draw_loading():
@@ -161,46 +148,53 @@ def draw_loading():
 
 
 def search_event(root, pos):
+    print(root.List_Current)
     x, y = pos
-    if root.ALGS and y < 33 and x < 33:
-        root.ALGS = False
-        if root.Current_Album is not None:
-            print_albums(root.Current_Album)
+    #if root.ALGS and y < 33 and x < 33:
+        #root.ALGS = False
+        #if root.get_current_album(False) is not None:
+            #print_albums(root.get_current_album(True))
+        #else:
+            #print_albums(root)
+        #return
+    if y < 33 and x < 33 and root.get_current_album(False) is not None:
+        print("heyyyyy")
+        root.get_current_album(False).MousePointer = None
+        print(root.get_current_album(True))
+        print(root.get_current_album(False))
+        if root.get_current_album(False) is not None:
+            print_albums(root.get_current_album(False))
         else:
             print_albums(root)
+        #print_albums(root.get_current_album(False))
         return
-    if y < 33 and x < 33 and root.Current_Album is not None:
-        print_albums(root)
-        root.Current_Album.MousePointer = None
-        root.Current_Album = None
+    if x > SCREEN_RESOLUTION[0] - 33 and y > SCREEN_RESOLUTION[1] - 33 and root.get_current_album(False) is not None:
+        if root.get_current_album(False).try_get_next_list():
+            print_albums(root.get_current_album(False))
         return
-    if x > SCREEN_RESOLUTION[0] - 33 and y > SCREEN_RESOLUTION[1] - 33 and root.Current_Album is not None:
-        if root.Current_Album.try_get_next_list():
-            print_albums(root.Current_Album)
+    if x < 33 and y > SCREEN_RESOLUTION[1] - 33 and root.get_current_album(False) is not None:
+        if root.get_current_album(False).try_get_previous_list():
+            print_albums(root.get_current_album(False))
         return
-    if x < 33 and y > SCREEN_RESOLUTION[1] - 33 and root.Current_Album is not None:
-        if root.Current_Album.try_get_previous_list():
-            print_albums(root.Current_Album)
-        return
-    if root.Current_Album is not None:
-        item = get_album(root.Current_Album.Items[root.Current_Album.Pointer], pos)
+    if root.get_current_album(False) is not None:
+        item = get_album(root.get_current_album(False).Items[root.get_current_album(False).Pointer], pos)
         if item is not None:
             if type(item) is Item:
                 path = os.path.abspath(item.Location + "/" + item.Name)
                 os.startfile(path)
             else:
+                root.add_current_album(item)
                 print_albums(item)
     else:
         next_album = get_album(root.Albums[0], pos)
         if next_album is not None:
-            root.Current_Album = next_album
+            root.add_current_album(next_album)
             print_albums(next_album)
     if 955 > x > 925:
         if 594 > y > 564:
+            #root.ALGS = True
             draw_loading()
-            root.ALGS = True
             find_copy(root, screen)
-
 
 
 def get_album(albums, event_position):
@@ -256,7 +250,7 @@ def print_albums(album):
     indent_y = RETREAT[1]
     i = 0
     for item in current_album:
-        print(type(item))
+        #print(type(item))
         album_image = item.Image
         image_rect = album_image.get_rect()  # scaling
         delta_x, delta_y = get_delta(image_rect)
