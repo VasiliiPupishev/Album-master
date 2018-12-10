@@ -195,6 +195,36 @@ def search_event(root, pos):
             #root.ALGS = True
             draw_loading()
             find_copy(root, screen)
+    if 914 > x > 892:
+        if 594 > y > 564:
+            from AddAlbum import AddAlbum
+            additor = AddAlbum()
+            additor.run_adding(root, screen)
+            print_albums(root.get_current_album(False))
+            #root.add_new_album()
+
+
+def print_addition_menu(root):
+    background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
+    background_image = pygame.transform.scale(background_image, (1000, 600))
+    font = pygame.font.SysFont('arial', 20)  # name caption
+    loading_caption = font.render("Creating new album", False, (0, 0, 0))
+    screen.blit(background_image, (0, 0))
+    screen.blit(loading_caption, (430, 10))
+    font = pygame.font.SysFont('arial', 15)  # name caption
+    loading_caption = font.render("Is this folder", False, (0, 0, 0))  # grouping in albums
+    screen.blit(loading_caption, (40, 400))
+    # ---------------------------------------------------------------------------------------------------------------
+    button = pygame.image.load("Backgrounds/plate.png")
+    font = pygame.font.SysFont('arial', 20)
+    button = pygame.transform.scale(button, (100, 40))
+    loading_caption = font.render("Create", False, (0, 0, 0))  # grouping in albums
+    screen.blit(loading_caption, (670, 510))
+    screen.blit(button, (650, 500))
+    button = pygame.image.load("Backgrounds/sq.png")
+    button = pygame.transform.scale(button, (19, 19))
+    screen.blit(button, (170, 400))
+
 
 
 def get_album(albums, event_position):
@@ -216,6 +246,9 @@ def draw_menu():
     back_image = pygame.image.load('Backgrounds/search.png')
     back_image = pygame.transform.scale(back_image, (30, 30))
     screen.blit(back_image, (925, 564))
+    back_image = pygame.image.load('Backgrounds/add.png')
+    back_image = pygame.transform.scale(back_image, (22, 22))
+    screen.blit(back_image, (892, 569))
 
 
 def get_coordinate(x, y, rect):
