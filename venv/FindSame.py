@@ -75,21 +75,22 @@ class Same:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    return
+                    raise SystemExit
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
-                        if self.search_events(event.pos, screen, root):
+                        fl = self.search_events(event.pos, screen, root)
+                        if type(fl) is not str and fl:
                             if self.Flag:
                                 if root.get_current_album(False) is None:
                                     for item in self.Albums:
-                                        #print("add " + str(item))
                                         root.add_album(item)
                                 else:
                                     for item in self.Albums:
-                                        #print("add " + str(item))
                                         root.get_current_album(False).add_item(item)
                                 return True
                             return False
+                        elif fl == "exit":
+                            return "exit"
             pygame.display.update()
 
     def search_events(self, pos, screen, root):
@@ -118,6 +119,9 @@ class Same:
                 self.print_loading(screen)
                 self.find_copy(0.5)
                 return True
+        if 440 < x < 540:
+            if 480 < y < 520:
+                return "exit"
         return False
 
     def print_loading(self, screen):
@@ -157,6 +161,10 @@ class Same:
         screen.blit(button, (750, 200))
         screen.blit(loading_caption, (780, 310))
         screen.blit(button, (750, 300))
+        button = pygame.transform.scale(button, (100, 40))
+        loading_caption = font.render("Cancel", False, (0, 0, 0))
+        screen.blit(button, (440, 480))
+        screen.blit(loading_caption, (460, 490))
         button = pygame.image.load("Backgrounds/sq.png")
         button = pygame.transform.scale(button, (19, 19))
         screen.blit(button, (170, 400))

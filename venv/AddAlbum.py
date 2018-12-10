@@ -45,7 +45,7 @@ class AddAlbum:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    return
+                    raise SystemExit
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         if self.search_events(event.pos, screen, root):
@@ -77,6 +77,11 @@ class AddAlbum:
                     self.Write = True
         if 500 < y < 540:
             if 500 < x < 600:
-                root.add_album(Album(self.Name, root.get_current_album(False).Name))
+                if root.get_current_album(False) is not None:
+                    if len(self.Name) == 0:
+                        self.Name = "default"
+                    root.get_current_album(False).add_item(Album(self.Name, root.get_current_album(False).Name))
+                return True
+            if 350 < x < 450:
                 return True
         return False
