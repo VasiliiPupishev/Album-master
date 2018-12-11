@@ -56,3 +56,11 @@ class Root:
     def is_album(self, loc, name):
         return
 
+    def update(self, directory):
+        return
+        #for item in os.listdir(directory):
+            #for album1 in self.Albums:
+                #for album in album1:
+                    #for item in album.get_all_items():
+                        #print(item.get_path_name())
+
