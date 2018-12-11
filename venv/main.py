@@ -57,10 +57,17 @@ def main():
                 if event.key == pygame.K_m:
                     move_item(root)
                 if event.key == pygame.K_r:
-                    rename_item(root)
+                    rename_item(root, screen)
                 if event.key == pygame.K_F1:
                     root.ALGS = True
                     find_copy(root, screen)
+                if event.key == pygame.K_a:
+                    fl = root.get_current_album(False)
+                    if fl is not None:
+                        fl.MousePointer.clear()
+                        for item in fl.get_all_items():
+                            fl.add_mpointer(item)
+                            print_albums(fl)
         pygame.display.update()
     pygame.quit()
     sys.exit()
@@ -97,10 +104,15 @@ def get_delta(image_rect):
     return delta_x, delta_y
 
 
-def rename_item(root):
-    if root.get_current_album(False) is not None:
-        if root.get_current_album(False).MousePointer is not None:
-            return
+def rename_item(root, screen):
+    from Rename import Rename
+    rename = Rename()
+    rename.run_rename(screen, root)
+    fl = root.get_current_album(False)
+    if fl is None:
+        print_albums(root)
+    else:
+        print_albums(fl)
 
 
 def move_item(root):
@@ -287,13 +299,12 @@ def print_albums(album):
     draw_menu()
     plate = pygame.image.load("Backgrounds/plate.png")
     plate = pygame.transform.scale(plate, PLATE_SIZE)
-    if type(album) is not Root and len(album.MousePointer) > 0:
-        mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
-        mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
-        for mp in album.MousePointer:
-                pos = mp.get_position()
-                screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
-                #print(album.MousePointer.get_position())
+    #if type(album) is not Root and len(album.MousePointer) > 0:
+    #    mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
+    #    mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
+    #    for mp in album.MousePointer:
+    #            pos = mp.get_position()
+    #            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
     current_album = None
     if type(album) is Root:
         current_album = album.Albums[album.Pointer]
@@ -302,6 +313,8 @@ def print_albums(album):
     indent_x = RETREAT[0]
     indent_y = RETREAT[1]
     i = 0
+    mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
+    mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
     for item in current_album:
         #print(type(item))
         album_image = item.Image
@@ -312,6 +325,9 @@ def print_albums(album):
         album_image = pygame.transform.scale(album_image, (temp_x, temp_y))
         (x, y) = get_coordinate(indent_x, indent_y, album_image.get_rect())
         item.set_position(x, y)
+        if type(album) is Album and album.MousePointer.__contains__(item):
+            pos = item.get_position()
+            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
         screen.blit(plate, (indent_x, indent_y))
         screen.blit(album_image, (x, y))  # ending output
         caption = get_caption(item.Name)
