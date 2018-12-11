@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/AddAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/AddAlbum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Album.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Album.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/RootClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/RootClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/1 - Copy (3)copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/111.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/1copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/202/222.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,28 +19,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1544516833853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1544529176347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-381">
-              <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
+            <state relative-caret-position="170">
+              <caret line="124" column="67" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="67" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#4913#7093#0" />
                 <element signature="e#7131#8282#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/Rename.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+            <state relative-caret-position="177">
+              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -154,9 +159,9 @@
         <option value="$PROJECT_DIR$/venv/FindSame.py" />
         <option value="$PROJECT_DIR$/venv/AddAlbum.py" />
         <option value="$PROJECT_DIR$/venv/Album.py" />
-        <option value="$PROJECT_DIR$/venv/Rename.py" />
         <option value="$PROJECT_DIR$/venv/RootClass.py" />
         <option value="$PROJECT_DIR$/venv/main.py" />
+        <option value="$PROJECT_DIR$/venv/Rename.py" />
       </list>
     </option>
   </component>
@@ -249,7 +254,7 @@
       <workItem from="1543427664557" duration="46012000" />
       <workItem from="1543989476040" duration="10168000" />
       <workItem from="1544192362555" duration="8428000" />
-      <workItem from="1544421516332" duration="25130000" />
+      <workItem from="1544421516332" duration="28597000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -384,11 +389,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544515603277</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="hello">
+      <created>1544516944106</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1544516944106</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121907000" />
+    <option name="totallyTimeSpent" value="125374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -502,16 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Rename.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Album.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -534,11 +536,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
+        <state relative-caret-position="170">
+          <caret line="124" column="67" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="67" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#4913#7093#0" />
             <element signature="e#7131#8282#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Rename.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
