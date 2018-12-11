@@ -35,7 +35,12 @@ def main():
     screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 50, int(SCREEN_RESOLUTION[1] / 2) - 10))
     exit = False
     print_albums(root)
+    TIMER = 0
     while not exit:
+        TIMER += 1
+        if TIMER == 5000:
+            TIMER = 0
+            root.update("Images")
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit = True
@@ -64,11 +69,17 @@ def main():
 def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
-    if same.print_filter(screen, root):
+    fl = same.print_filter(screen, root)
+    if fl:
         if root.get_current_album(False) is not None:
             print_albums(root.get_current_album(False))
         else:
             print_albums(root)
+    elif fl == "exit":
+        if root.get_current_album(False) is None:
+            print_albums(root)
+        else:
+            print_albums(root.get_current_album(False))
     else:
         print_albums(same.Album)
         root.add_current_album(same.Album)
@@ -109,9 +120,10 @@ def move_item(root):
 
 
 def copy_item(root):
-    if root.get_current_album(False).MousePointer is not None:
+    if len(root.get_current_album(False).MousePointer) > 0:
         root.Buffer.clear()
-        root.Buffer.append((root.get_current_album(False).MousePointer, root.get_current_album(False)))
+        for item in root.get_current_album(False).MousePointer:
+            root.Buffer.append((item, root.get_current_album(False)))
 
 
 def paste_item(root):
@@ -133,7 +145,11 @@ def set_mouse_pointer(root, pos):
         return
     item = get_album(root.get_current_album(False).Items[root.get_current_album(False).Pointer], pos)
     if item is not None:
-        root.get_current_album(False).MousePointer = item
+        if root.get_current_album(False).MousePointer.__contains__(item):
+            root.get_current_album(False).MousePointer.remove(item)
+            print_albums(root.get_current_album(False))
+            return
+        root.get_current_album(False).add_mpointer(item)
         print_albums(root.get_current_album(False))
 
 
@@ -159,7 +175,7 @@ def search_event(root, pos):
         #return
     if y < 33 and x < 33 and root.get_current_album(False) is not None:
         print("heyyyyy")
-        root.get_current_album(False).MousePointer = None
+        root.get_current_album(False).MousePointer.clear()
         print(root.get_current_album(True))
         print(root.get_current_album(False))
         if root.get_current_album(False) is not None:
@@ -200,8 +216,11 @@ def search_event(root, pos):
             from AddAlbum import AddAlbum
             additor = AddAlbum()
             additor.run_adding(root, screen)
-            print_albums(root.get_current_album(False))
-            #root.add_new_album()
+            temp = root.get_current_album(False)
+            if temp is None:
+                print_albums(root)
+            else:
+                print_albums(temp)
 
 
 def print_addition_menu(root):
@@ -268,12 +287,13 @@ def print_albums(album):
     draw_menu()
     plate = pygame.image.load("Backgrounds/plate.png")
     plate = pygame.transform.scale(plate, PLATE_SIZE)
-    if type(album) is not Root and album.MousePointer is not None:
+    if type(album) is not Root and len(album.MousePointer) > 0:
         mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
         mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
-        pos = album.MousePointer.get_position()
-        screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
-        print(album.MousePointer.get_position())
+        for mp in album.MousePointer:
+                pos = mp.get_position()
+                screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
+                #print(album.MousePointer.get_position())
     current_album = None
     if type(album) is Root:
         current_album = album.Albums[album.Pointer]
