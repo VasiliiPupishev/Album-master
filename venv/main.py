@@ -29,13 +29,18 @@ def main():
     font = pygame.font.SysFont('arial', 30)
     root = Root(DIR, "Images")
     root.init("Images", root.Albums[0], True)
-    print(len(root.Albums[0]))
+    #print(len(root.Albums[0]))
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
     screen.blit(background_image, (0, 0))
     screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 50, int(SCREEN_RESOLUTION[1] / 2) - 10))
     exit = False
     print_albums(root)
+    TIMER = 0
     while not exit:
+        TIMER += 1
+        if TIMER == 5000:
+            TIMER = 0
+            root.update("Images")
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit = True
@@ -52,29 +57,39 @@ def main():
                 if event.key == pygame.K_m:
                     move_item(root)
                 if event.key == pygame.K_r:
-                    rename_item(root)
+                    rename_item(root, screen)
                 if event.key == pygame.K_F1:
                     root.ALGS = True
-                    find_copy(root, 0, screen)
-                if event.key == pygame.K_F2:
-                    root.ALGS = True
-                    find_copy(root, 0.27, screen)
-                if event.key == pygame.K_F3:
-                    root.ALGS = True
-                    find_copy(root, 0.5, screen)
+                    find_copy(root, screen)
+                if event.key == pygame.K_a:
+                    fl = root.get_current_album(False)
+                    if fl is not None:
+                        fl.MousePointer.clear()
+                        for item in fl.get_all_items():
+                            fl.add_mpointer(item)
+                        print_albums(fl)
         pygame.display.update()
     pygame.quit()
     sys.exit()
 
 
-def find_copy(root, per, screen):
+def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
-    same.print_filter(screen)
-    #time.sleep(10)
-    #same.find_copy(per)
-    #print_albums(same.Album)
-    #root.Current_Album = same.Album
+    fl = same.print_filter(screen, root)
+    if fl:
+        if root.get_current_album(False) is not None:
+            print_albums(root.get_current_album(False))
+        else:
+            print_albums(root)
+    elif fl == "exit":
+        if root.get_current_album(False) is None:
+            print_albums(root)
+        else:
+            print_albums(root.get_current_album(False))
+    else:
+        print_albums(same.Album)
+        root.add_current_album(same.Album)
 
 
 def get_delta(image_rect):
@@ -89,10 +104,15 @@ def get_delta(image_rect):
     return delta_x, delta_y
 
 
-def rename_item(root):
-    if root.Current_Album is not None:
-        if root.Current_Album.MousePointer is not None:
-            return
+def rename_item(root, screen):
+    from Rename import Rename
+    rename = Rename()
+    rename.run_rename(screen, root)
+    fl = root.get_current_album(False)
+    if fl is None:
+        print_albums(root)
+    else:
+        print_albums(fl)
 
 
 def move_item(root):
@@ -101,17 +121,21 @@ def move_item(root):
         return
     for i in root.Buffer:
         item = i[0]
-        shutil.move(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.Current_Album.Location)
-        root.Current_Album.add_item(item)
+        try:
+            shutil.move(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.get_current_album(False).Location)
+        except Exception:
+            print("oooops")
+        root.get_current_album(False).add_item(item)
         i[1].del_item(item)
     root.Buffer.clear()
-    print_albums(root.Current_Album)
+    print_albums(root.get_current_album(False))
 
 
 def copy_item(root):
-    if root.Current_Album.MousePointer is not None:
+    if len(root.get_current_album(False).MousePointer) > 0:
         root.Buffer.clear()
-        root.Buffer.append((root.Current_Album.MousePointer, root.Current_Album))
+        for item in root.get_current_album(False).MousePointer:
+            root.Buffer.append((item, root.get_current_album(False)))
 
 
 def paste_item(root):
@@ -119,19 +143,26 @@ def paste_item(root):
         import shutil
         for i in root.Buffer:
             item = i[0]
-            shutil.copy(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.Current_Album.Location + "/" + item.Name[:-4] + "copy.jpg", follow_symlinks=True)
-            root.Current_Album.add_item(item)
+            try:
+                shutil.copy(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.get_current_album(False).Location + "/" + item.Name[:-4] + "copy.jpg", follow_symlinks=True)
+            except Exception:
+                print("ooooops")
+            root.get_current_album(False).add_item(item)
         root.Buffer.clear()
-        print_albums(root.Current_Album)
+        print_albums(root.get_current_album(False))
 
 
 def set_mouse_pointer(root, pos):
-    if root.Current_Album is None:
+    if root.get_current_album(False) is None:
         return
-    item = get_album(root.Current_Album.Items[root.Current_Album.Pointer], pos)
+    item = get_album(root.get_current_album(False).Items[root.get_current_album(False).Pointer], pos)
     if item is not None:
-        root.Current_Album.MousePointer = item
-        print_albums(root.Current_Album)
+        if root.get_current_album(False).MousePointer.__contains__(item):
+            root.get_current_album(False).MousePointer.remove(item)
+            print_albums(root.get_current_album(False))
+            return
+        root.get_current_album(False).add_mpointer(item)
+        print_albums(root.get_current_album(False))
 
 
 def draw_loading():
@@ -145,35 +176,86 @@ def draw_loading():
 
 
 def search_event(root, pos):
+    print(root.List_Current)
     x, y = pos
-    if root.ALGS and y < 33 and x < 33:
-        root.ALGS = False
-        print_albums(root)
-        root.Current_Album = None
+    #if root.ALGS and y < 33 and x < 33:
+        #root.ALGS = False
+        #if root.get_current_album(False) is not None:
+            #print_albums(root.get_current_album(True))
+        #else:
+            #print_albums(root)
+        #return
+    if y < 33 and x < 33 and root.get_current_album(False) is not None:
+        print("heyyyyy")
+        root.get_current_album(False).MousePointer.clear()
+        print(root.get_current_album(True))
+        print(root.get_current_album(False))
+        if root.get_current_album(False) is not None:
+            print_albums(root.get_current_album(False))
+        else:
+            print_albums(root)
+        #print_albums(root.get_current_album(False))
         return
-    if y < 33 and x < 33 and root.Current_Album is not None:
-        print_albums(root)
-        root.Current_Album.MousePointer = None
-        root.Current_Album = None
+    if x > SCREEN_RESOLUTION[0] - 33 and y > SCREEN_RESOLUTION[1] - 33 and root.get_current_album(False) is not None:
+        if root.get_current_album(False).try_get_next_list():
+            print_albums(root.get_current_album(False))
         return
-    if x > SCREEN_RESOLUTION[0] - 33 and y > SCREEN_RESOLUTION[1] - 33 and root.Current_Album is not None:
-        if root.Current_Album.try_get_next_list():
-            print_albums(root.Current_Album)
+    if x < 33 and y > SCREEN_RESOLUTION[1] - 33 and root.get_current_album(False) is not None:
+        if root.get_current_album(False).try_get_previous_list():
+            print_albums(root.get_current_album(False))
         return
-    if x < 33 and y > SCREEN_RESOLUTION[1] - 33 and root.Current_Album is not None:
-        if root.Current_Album.try_get_previous_list():
-            print_albums(root.Current_Album)
-        return
-    if root.Current_Album is not None:
-        item = get_album(root.Current_Album.Items[root.Current_Album.Pointer], pos)
+    if root.get_current_album(False) is not None:
+        item = get_album(root.get_current_album(False).Items[root.get_current_album(False).Pointer], pos)
         if item is not None:
-            path = os.path.abspath(item.Location + "/" + item.Name)
-            os.startfile(path)
+            if type(item) is Item:
+                path = os.path.abspath(item.Location + "/" + item.Name)
+                os.startfile(path)
+            else:
+                root.add_current_album(item)
+                print_albums(item)
     else:
         next_album = get_album(root.Albums[0], pos)
         if next_album is not None:
-            root.Current_Album = next_album
+            root.add_current_album(next_album)
             print_albums(next_album)
+    if 955 > x > 925:
+        if 594 > y > 564:
+            #root.ALGS = True
+            draw_loading()
+            find_copy(root, screen)
+    if 914 > x > 892:
+        if 594 > y > 564:
+            from AddAlbum import AddAlbum
+            additor = AddAlbum()
+            additor.run_adding(root, screen)
+            temp = root.get_current_album(False)
+            if temp is None:
+                print_albums(root)
+            else:
+                print_albums(temp)
+
+
+def print_addition_menu(root):
+    background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
+    background_image = pygame.transform.scale(background_image, (1000, 600))
+    font = pygame.font.SysFont('arial', 20)  # name caption
+    loading_caption = font.render("Creating new album", False, (0, 0, 0))
+    screen.blit(background_image, (0, 0))
+    screen.blit(loading_caption, (430, 10))
+    font = pygame.font.SysFont('arial', 15)  # name caption
+    loading_caption = font.render("Is this folder", False, (0, 0, 0))  # grouping in albums
+    screen.blit(loading_caption, (40, 400))
+    # ---------------------------------------------------------------------------------------------------------------
+    button = pygame.image.load("Backgrounds/plate.png")
+    font = pygame.font.SysFont('arial', 20)
+    button = pygame.transform.scale(button, (100, 40))
+    loading_caption = font.render("Create", False, (0, 0, 0))  # grouping in albums
+    screen.blit(loading_caption, (670, 510))
+    screen.blit(button, (650, 500))
+    button = pygame.image.load("Backgrounds/sq.png")
+    button = pygame.transform.scale(button, (19, 19))
+    screen.blit(button, (170, 400))
+
 
 
 def get_album(albums, event_position):
@@ -192,10 +274,15 @@ def draw_menu():
     screen.blit(back_image, (5, SCREEN_RESOLUTION[1] - 35))
     back_image = pygame.transform.rotate(back_image, 180)
     screen.blit(back_image, (SCREEN_RESOLUTION[0]-35, SCREEN_RESOLUTION[1]-35))
-    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.image.load('Backgrounds/21.png')
     back_image = pygame.transform.scale(back_image, (30, 30))
-    screen.blit(back_image, (SCREEN_RESOLUTION[0] - 75, SCREEN_RESOLUTION[1] - 35))
-
+    screen.blit(back_image, (925, 564))
+    back_image = pygame.image.load('Backgrounds/add.png')
+    back_image = pygame.transform.scale(back_image, (22, 22))
+    screen.blit(back_image, (890, 569))
+    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.transform.scale(back_image, (27, 27))
+    screen.blit(back_image, (855, 569))
 
 
 def get_coordinate(x, y, rect):
@@ -215,12 +302,12 @@ def print_albums(album):
     draw_menu()
     plate = pygame.image.load("Backgrounds/plate.png")
     plate = pygame.transform.scale(plate, PLATE_SIZE)
-    if type(album) is not Root and album.MousePointer is not None:
-        mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
-        mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
-        pos = album.MousePointer.get_position()
-        screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
-        print(album.MousePointer.get_position())
+    #if type(album) is not Root and len(album.MousePointer) > 0:
+    #    mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
+    #    mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
+    #    for mp in album.MousePointer:
+    #            pos = mp.get_position()
+    #            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
     current_album = None
     if type(album) is Root:
         current_album = album.Albums[album.Pointer]
@@ -229,7 +316,10 @@ def print_albums(album):
     indent_x = RETREAT[0]
     indent_y = RETREAT[1]
     i = 0
+    mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
+    mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
     for item in current_album:
+        #print(type(item))
         album_image = item.Image
         image_rect = album_image.get_rect()  # scaling
         delta_x, delta_y = get_delta(image_rect)
@@ -238,6 +328,9 @@ def print_albums(album):
         album_image = pygame.transform.scale(album_image, (temp_x, temp_y))
         (x, y) = get_coordinate(indent_x, indent_y, album_image.get_rect())
         item.set_position(x, y)
+        if type(album) is Album and album.MousePointer.__contains__(item):
+            pos = item.get_position()
+            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
         screen.blit(plate, (indent_x, indent_y))
         screen.blit(album_image, (x, y))  # ending output
         caption = get_caption(item.Name)

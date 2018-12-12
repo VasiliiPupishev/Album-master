@@ -18,7 +18,13 @@ class Album:
         self.Items = [[]]
         self.Image = pygame.image.load("Backgrounds\\album.png").convert_alpha()
         self.Name = name
+        self.MousePointer = []
         self.Location = location + "/" + name
+
+    def add_mpointer(self, item):
+        from Item import Item
+        if type(item) is Item:
+            self.MousePointer.append(item)
         
     def get_path_name(self):
         return self.Location + "\\" + self.Name
