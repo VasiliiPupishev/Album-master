@@ -191,6 +191,8 @@ def paste_item(root):
                 shutil.copy(DIR + "/" + item.Location + "/" + item.Name, DIR + "/" + root.get_current_album(False).Location + "/" + item.Name[:-4] + "copy.jpg", follow_symlinks=True)
             except Exception:
                 print("ooooops")
+            if root.get_current_album(False) is i[0]:
+                continue
             root.get_current_album(False).add_item(item)
         root.Buffer.clear()
         print_albums(root.get_current_album(False))
@@ -223,7 +225,6 @@ def search_event(root, pos):
     print(root.List_Current)
     x, y = pos
     if y < 33 and x < 33 and root.get_current_album(False) is not None:
-        print("heyyyyy")
         root.get_current_album(False).MousePointer.clear()
         print(root.get_current_album(True))
         print(root.get_current_album(False))
@@ -317,12 +318,6 @@ def print_albums(album):
     draw_menu()
     plate = pygame.image.load("Backgrounds/plate.png")
     plate = pygame.transform.scale(plate, PLATE_SIZE)
-    #if type(album) is not Root and len(album.MousePointer) > 0:
-    #    mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
-    #    mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
-    #    for mp in album.MousePointer:
-    #            pos = mp.get_position()
-    #            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
     current_album = None
     if type(album) is Root:
         current_album = album.Albums[album.Pointer]
@@ -345,7 +340,10 @@ def print_albums(album):
         item.set_position(x, y)
         if type(album) is Album and album.MousePointer.__contains__(item):
             pos = item.get_position()
-            screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
+            if type(item) is Item:
+                screen.blit(mousePointer, (pos[0] - 7, pos[1] - 24))
+            else:
+                screen.blit(mousePointer, (pos[0] - 22, pos[1] - 10))
         screen.blit(plate, (indent_x, indent_y))
         screen.blit(album_image, (x, y))  # ending output
         caption = get_caption(item.Name)

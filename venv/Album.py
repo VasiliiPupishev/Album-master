@@ -22,9 +22,9 @@ class Album:
         self.Location = location + "/" + name
 
     def add_mpointer(self, item):
-        from Item import Item
-        if type(item) is Item:
-            self.MousePointer.append(item)
+        #from Item import Item
+        #if type(item) is Item:
+        self.MousePointer.append(item)
         
     def get_path_name(self):
         return self.Location + "\\" + self.Name
@@ -67,3 +67,6 @@ class Album:
     def set_position(self, x, y):
         self.X = x
         self.Y = y
+
+    def get_position(self):
+        return self.X, self.Y
