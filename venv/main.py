@@ -68,9 +68,17 @@ def main():
                         for item in fl.get_all_items():
                             fl.add_mpointer(item)
                         print_albums(fl)
+                if event.key == pygame.K_f:
+                    find_item(root, screen)
         pygame.display.update()
     pygame.quit()
     sys.exit()
+
+
+def find_item(root, screen):
+    from FindItem import Find
+    fi = Find()
+    fi.run_find(screen, root)
 
 
 def find_copy(root, screen):

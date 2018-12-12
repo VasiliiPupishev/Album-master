@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/im 9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/202/new name.jpg" beforeDir="false" />
-    </list>
+    <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="hello" />
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#4913#7093#0" />
@@ -39,11 +28,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/venv/FindItem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-129">
+              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="60" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Rename.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+            <state relative-caret-position="58">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="37" selection-end-column="35" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -164,6 +165,7 @@
         <option value="$PROJECT_DIR$/venv/RootClass.py" />
         <option value="$PROJECT_DIR$/venv/Rename.py" />
         <option value="$PROJECT_DIR$/venv/main.py" />
+        <option value="$PROJECT_DIR$/venv/FindItem.py" />
       </list>
     </option>
   </component>
@@ -256,7 +258,7 @@
       <workItem from="1543427664557" duration="46012000" />
       <workItem from="1543989476040" duration="10168000" />
       <workItem from="1544192362555" duration="8428000" />
-      <workItem from="1544421516332" duration="33710000" />
+      <workItem from="1544421516332" duration="38849000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -409,7 +411,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130487000" />
+    <option name="totallyTimeSpent" value="135626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -545,8 +547,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Rename.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+        <state relative-caret-position="58">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="37" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -555,12 +557,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+        <state relative-caret-position="330">
+          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#4913#7093#0" />
             <element signature="e#7131#8282#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/FindItem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="60" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
