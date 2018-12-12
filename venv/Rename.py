@@ -102,6 +102,7 @@ class Rename:
                     if len(self.Name) == 0:
                         self.Name = ""
                     i = 0
+                    j = 1
                     for item in root.get_current_album(False).MousePointer:
                         new_name = self.Name
                         if self.EnumerableFlag:
@@ -111,8 +112,11 @@ class Rename:
                         try:
                             os.rename(os.getcwd() + "/" + item.Location + "/" + item.Name,
                                       os.getcwd() + "/" + item.Location + "/" + new_name + ".jpg")
-                        except Exception:
-                            print("exception")
+                        except FileExistsError:
+                            new_name += "-copy(" + str(j) + ")"
+                            j += 1
+                            os.rename(os.getcwd() + "/" + item.Location + "/" + item.Name,
+                                      os.getcwd() + "/" + item.Location + "/" + new_name + ".jpg")
                         item.Name = new_name + ".jpg"
                         i += 1
                 return True

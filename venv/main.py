@@ -78,7 +78,12 @@ def main():
 def find_item(root, screen):
     from FindItem import Find
     fi = Find()
-    fi.run_find(screen, root)
+    al = fi.run_find(screen, root)
+    l = al.get_all_items()
+    print(l)
+    if len(l) > 0:
+        print_albums(al)
+
 
 
 def find_copy(root, screen):
