@@ -67,7 +67,7 @@ def main():
                         fl.MousePointer.clear()
                         for item in fl.get_all_items():
                             fl.add_mpointer(item)
-                            print_albums(fl)
+                        print_albums(fl)
         pygame.display.update()
     pygame.quit()
     sys.exit()
@@ -274,12 +274,15 @@ def draw_menu():
     screen.blit(back_image, (5, SCREEN_RESOLUTION[1] - 35))
     back_image = pygame.transform.rotate(back_image, 180)
     screen.blit(back_image, (SCREEN_RESOLUTION[0]-35, SCREEN_RESOLUTION[1]-35))
-    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.image.load('Backgrounds/21.png')
     back_image = pygame.transform.scale(back_image, (30, 30))
     screen.blit(back_image, (925, 564))
     back_image = pygame.image.load('Backgrounds/add.png')
     back_image = pygame.transform.scale(back_image, (22, 22))
-    screen.blit(back_image, (892, 569))
+    screen.blit(back_image, (890, 569))
+    back_image = pygame.image.load('Backgrounds/search.png')
+    back_image = pygame.transform.scale(back_image, (27, 27))
+    screen.blit(back_image, (855, 569))
 
 
 def get_coordinate(x, y, rect):

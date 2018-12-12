@@ -4,6 +4,8 @@ import copy
 import pygame
 from Item import Item
 import os
+from random import choice
+from string import ascii_uppercase
 
 
 class Rename:
@@ -11,6 +13,7 @@ class Rename:
     Name = None
     Write = False
     EnumerableFlag = False
+    RandomFlag = False
 
     def __init__(self):
         self.Pattern = 0
@@ -44,6 +47,8 @@ class Rename:
         font = pygame.font.SysFont('arial', 15)  # name caption
         loading_caption = font.render("Numerate", False, (0, 0, 0))  # grouping in albums
         screen.blit(loading_caption, (410, 450))
+        loading_caption = font.render("Random name", False, (0, 0, 0))  # grouping in albums
+        screen.blit(loading_caption, (377, 430))
         #---------------------------------------------------------------------------------------------------------------
         button = pygame.image.load("Backgrounds/plate.png")
         font = pygame.font.SysFont('arial', 20)
@@ -62,6 +67,7 @@ class Rename:
         button = pygame.image.load("Backgrounds/sq.png")
         button = pygame.transform.scale(button, (19, 19))
         screen.blit(button, (500, 450))
+        screen.blit(button, (500, 430))
 
     def search_events(self, pos, screen, root):
         x, y = pos
@@ -75,6 +81,16 @@ class Rename:
                     screen.blit(button, (500, 450))
                 else:
                     self.EnumerableFlag = False
+                    self.print_addition_menu(screen)
+            if 430 < y < 450:
+                if not self.RandomFlag:
+                    self.RandomFlag = True
+                    button = pygame.image.load("Backgrounds/back.png")
+                    button = pygame.transform.scale(button, (19, 19))
+                    button = pygame.transform.rotate(button, 90)
+                    screen.blit(button, (500, 430))
+                else:
+                    self.RandomFlag = False
                     self.print_addition_menu(screen)
         if 200 < x < 800:
             if 230 < y < 300:
@@ -90,6 +106,8 @@ class Rename:
                         new_name = self.Name
                         if self.EnumerableFlag:
                             new_name += str(i)
+                        if self.RandomFlag:
+                            new_name += ''.join(choice(ascii_uppercase) for i in range(5))
                         try:
                             os.rename(os.getcwd() + "/" + item.Location + "/" + item.Name,
                                       os.getcwd() + "/" + item.Location + "/" + new_name + ".jpg")
