@@ -22,14 +22,12 @@ pygame.display.set_icon(logo)
 
 
 def main():
-    items = []
     draw_loading()
     background_image = pygame.image.load('Backgrounds\\index.jpg').convert_alpha()
     background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
     font = pygame.font.SysFont('arial', 30)
     root = Root(DIR, "Images")
     root.init("Images", root.Albums[0], True)
-    #print(len(root.Albums[0]))
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
     screen.blit(background_image, (0, 0))
     screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 50, int(SCREEN_RESOLUTION[1] / 2) - 10))
@@ -70,9 +68,26 @@ def main():
                         print_albums(fl)
                 if event.key == pygame.K_f:
                     find_item(root, screen)
+                if event.key == pygame.K_DELETE:
+                    delete_item(root, screen)
         pygame.display.update()
     pygame.quit()
     sys.exit()
+
+
+def delete_item(root, screen):
+    al = root.get_current_album(False)
+    if al is not None:
+        for item in al.MousePointer:
+            al.del_item(item)
+            try:
+                os.remove(os.getcwd() + "/" + item.Location + "/" + item.Name)
+            except Exception:
+                print("exception")
+    if root.get_current_album(False) is None:
+        print_albums(root)
+    else:
+        print_albums(root.get_current_album(False))
 
 
 def find_item(root, screen):
@@ -80,10 +95,26 @@ def find_item(root, screen):
     fi = Find()
     al = fi.run_find(screen, root)
     l = al.get_all_items()
-    print(l)
     if len(l) > 0:
+        root.add_current_album(al)
         print_albums(al)
+    else:
+        print_not_result(root)
 
+
+def print_not_result(root):
+    background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
+    background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
+    font = pygame.font.SysFont('arial', 30)
+    loading_caption = font.render("No results", False, (0, 0, 0))
+    screen.blit(background_image, (0, 0))
+    screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 100, int(SCREEN_RESOLUTION[1] / 2) - 10))
+    pygame.display.update()
+    time.sleep(1)
+    if root.get_current_album(False) is not None:
+        print_albums(root.get_current_album(False))
+    else:
+        print_albums(root)
 
 
 def find_copy(root, screen):
@@ -191,13 +222,6 @@ def draw_loading():
 def search_event(root, pos):
     print(root.List_Current)
     x, y = pos
-    #if root.ALGS and y < 33 and x < 33:
-        #root.ALGS = False
-        #if root.get_current_album(False) is not None:
-            #print_albums(root.get_current_album(True))
-        #else:
-            #print_albums(root)
-        #return
     if y < 33 and x < 33 and root.get_current_album(False) is not None:
         print("heyyyyy")
         root.get_current_album(False).MousePointer.clear()
@@ -207,7 +231,6 @@ def search_event(root, pos):
             print_albums(root.get_current_album(False))
         else:
             print_albums(root)
-        #print_albums(root.get_current_album(False))
         return
     if x > SCREEN_RESOLUTION[0] - 33 and y > SCREEN_RESOLUTION[1] - 33 and root.get_current_album(False) is not None:
         if root.get_current_album(False).try_get_next_list():
@@ -233,7 +256,6 @@ def search_event(root, pos):
             print_albums(next_album)
     if 955 > x > 925:
         if 594 > y > 564:
-            #root.ALGS = True
             draw_loading()
             find_copy(root, screen)
     if 914 > x > 892:
@@ -246,29 +268,9 @@ def search_event(root, pos):
                 print_albums(root)
             else:
                 print_albums(temp)
-
-
-def print_addition_menu(root):
-    background_image = pygame.image.load('Backgrounds/index.jpg').convert_alpha()
-    background_image = pygame.transform.scale(background_image, (1000, 600))
-    font = pygame.font.SysFont('arial', 20)  # name caption
-    loading_caption = font.render("Creating new album", False, (0, 0, 0))
-    screen.blit(background_image, (0, 0))
-    screen.blit(loading_caption, (430, 10))
-    font = pygame.font.SysFont('arial', 15)  # name caption
-    loading_caption = font.render("Is this folder", False, (0, 0, 0))  # grouping in albums
-    screen.blit(loading_caption, (40, 400))
-    # ---------------------------------------------------------------------------------------------------------------
-    button = pygame.image.load("Backgrounds/plate.png")
-    font = pygame.font.SysFont('arial', 20)
-    button = pygame.transform.scale(button, (100, 40))
-    loading_caption = font.render("Create", False, (0, 0, 0))  # grouping in albums
-    screen.blit(loading_caption, (670, 510))
-    screen.blit(button, (650, 500))
-    button = pygame.image.load("Backgrounds/sq.png")
-    button = pygame.transform.scale(button, (19, 19))
-    screen.blit(button, (170, 400))
-
+    if 855 < x < 882:
+        if 569 < y < 598:
+            find_item(root, screen)
 
 
 def get_album(albums, event_position):

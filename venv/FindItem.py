@@ -67,7 +67,15 @@ class Find:
                 fi = root.get_current_album(False)
                 if fi is not None:
                     for item in fi.get_all_items():
-                        print(item.Name[:len(item.Name) - 4] + "  " + self.Name)
+                        if item.Name[:len(item.Name) - 4] == self.Name:
+                            self.Album.add_item(item)
+                else:
+                    items = []
+                    for al in root.Albums:
+                        for al1 in al:
+                            for i in al1.get_all_items():
+                                items.append(i)
+                    for item in items:
                         if item.Name[:len(item.Name) - 4] == self.Name:
                             self.Album.add_item(item)
                 return True
