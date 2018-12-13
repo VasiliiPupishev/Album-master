@@ -1,25 +1,35 @@
 import os
 
 SCREEN_RESOLUTION = (1000, 600)
+import pygame
 
 class Item:
-    X = 0
-    Y = 0
-    Location = ""
-    Name = ""
-    Image = None
+   X = 0
+   Y = 0
+   Location = ""
+   Name = ""
+   #Image = None
 
-    def __init__(self, image, name, location):
-        self.Name = name
-        self.Image = image
-        self.Location = location
+   def get_image(self):
+       try:
+           return pygame.image.load(self.Location + "/" + self.Name).convert_alpha()
+       except Exception:
+           del self
+           return None
 
-    def get_path_name(self):
-        return self.Location + "\\" + self.Name
+   def __init__(self, image, name, location):
+       self.Name = name
+       #self.Image = image
+       self.Location = location
 
-    def set_position(self, x, y):
-        self.X = x
-        self.Y = y
+   def get_path_name(self):
+       return self.Location + "\\" + self.Name
 
-    def get_position(self):
-        return self.X, self.Y
+   def set_position(self, x, y):
+       self.X = x
+       self.Y = y
+
+   def get_position(self):
+       return self.X, self.Y
+
+

@@ -1,5 +1,6 @@
 import os
 import pygame
+
 SCREEN_RESOLUTION = (1000, 600)
 pygame.init()
 
@@ -10,22 +11,25 @@ class Album:
     Items = None
     Location = ""
     Name = ""
-    Image = None
+    # Image = None
     Pointer = 0
     MousePointer = None
 
     def __init__(self, name, location):
         self.Items = [[]]
-        self.Image = pygame.image.load("Backgrounds\\album.png").convert_alpha()
+        # self.Image = pygame.image.load("Backgrounds\\album.png").convert_alpha()
         self.Name = name
         self.MousePointer = []
         self.Location = location + "/" + name
 
+    def get_image(self):
+        return pygame.image.load("Backgrounds\\album.png").convert_alpha()
+
     def add_mpointer(self, item):
-        #from Item import Item
-        #if type(item) is Item:
+        # from Item import Item
+        # if type(item) is Item:
         self.MousePointer.append(item)
-        
+
     def get_path_name(self):
         return self.Location + "\\" + self.Name
 
@@ -70,3 +74,5 @@ class Album:
 
     def get_position(self):
         return self.X, self.Y
+
+
