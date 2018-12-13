@@ -7,7 +7,7 @@ SCREEN_RESOLUTION = (1000, 600)
 pygame.init()
 
 class Root:
-    Albums = []
+    Albums = None
     Location = ""
     Name = ""
     Pointer = 0
@@ -31,6 +31,7 @@ class Root:
     def __init__(self, location, name):
         self.Name = name
         self.List_Current = []
+        self.Albums = []
         self.Albums.append([])
         self.Location = location + "\\" + name
 
@@ -51,16 +52,32 @@ class Root:
                     continue
 
     def add_album(self, album):
-        self.Albums.append(album)
+        for list in self.Albums:
+            if len(list) < 28:
+                list.append(album)
+                return
+        self.Items.append([album])
 
     def is_album(self, loc, name):
         return
 
-    def update(self, directory):
-        return
-        #for item in os.listdir(directory):
-            #for album1 in self.Albums:
-                #for album in album1:
-                    #for item in album.get_all_items():
-                        #print(item.get_path_name())
-
+    def update(self, ddd):
+        flag = False
+        for fol in self.Albums:
+            for album in fol:
+                items = os.listdir(os.getcwd() + "/" + album.Location)
+                ls = album.get_all_items()
+                for item in ls:
+                    if items.__contains__(item.Name):
+                        items.remove(item.Name)
+                    else:
+                        self.get_current_album(False).del_item(item)
+                        flag = True
+                for name in items:
+                    try:
+                        image = pygame.image.load(album.Location + "/" + name)
+                        self.get_current_album(False).add_item(Item(image, name, album.Name))
+                        flag = True
+                    except Exception:
+                        continue
+        return flag

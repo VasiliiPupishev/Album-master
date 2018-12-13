@@ -38,7 +38,11 @@ def main():
         TIMER += 1
         if TIMER == 5000:
             TIMER = 0
-            root.update("Images")
+            if root.update("Images"):
+                if root.get_current_album(False) is None:
+                    print_albums(root)
+                else:
+                    print_albums(root.get_current_album(False))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit = True
