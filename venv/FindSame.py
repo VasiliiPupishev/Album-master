@@ -32,11 +32,17 @@ class Same:
                for album in line:
                    for list in album.Items:
                        for item in list:
-                           self.items.append(item)
+                           if type(item) is not Album:
+                               self.items.append(item)
+                           else:
+                               continue
        else:
            for list in root.get_current_album(False).Items:
                for item in list:
-                   self.items.append(item)
+                   if type(item) is not Album:
+                       self.items.append(item)
+                   else:
+                       continue
 
    def find_copy(self, per):
        number = 0
@@ -83,7 +89,9 @@ class Same:
                        fl = self.search_events(event.pos, screen, root)
                        if type(fl) is not str and fl:
                            if self.Flag:
+                               print(root.get_current_album(False))
                                if root.get_current_album(False) is None:
+                                   print(len(self.Albums))
                                    for item in self.Albums:
                                        root.add_album(item)
                                else:
@@ -170,5 +178,3 @@ class Same:
        button = pygame.image.load("Backgrounds/sq.png")
        button = pygame.transform.scale(button, (19, 19))
        screen.blit(button, (170, 400))
-
-
