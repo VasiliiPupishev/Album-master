@@ -21,8 +21,10 @@ pygame.display.set_caption("Your Photos")
 logo = pygame.image.load("Backgrounds\\logo.jpg")
 pygame.display.set_icon(logo)
 
+from Images import ImageBank
 
 def main():
+    imageBank = ImageBank()
     draw_loading()
     background_image = pygame.image.load('Backgrounds\\index.jpg').convert_alpha()
     background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
