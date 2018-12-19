@@ -12,3 +12,6 @@ class ImageBank:
 
     def dell_by_index(self, index):
         del self.Images[index]
+
+    def get(self, index):
+        return self.Images[index]
