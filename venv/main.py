@@ -34,10 +34,12 @@ def main():
     try:
         with open('data.pickle', 'rb') as f:
             root = pickle.load(f)
-            full_image_bank(imageBank, root)
     except Exception:
         root = Root(DIR, "Images")
         root.init("Images", root.Albums[0], True)
+    root = Root(DIR, "Images")
+    root.init("Images", root.Albums[0], True)
+    full_image_bank(imageBank, root)
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
     screen.blit(background_image, (0, 0))
     screen.blit(loading_caption, (int(SCREEN_RESOLUTION[0] / 2) - 50, int(SCREEN_RESOLUTION[1] / 2) - 10))
@@ -368,10 +370,11 @@ def print_albums(album):
     mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
     mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
     for item in current_album:
-        #print(item.Index)
+        print(item.Index)
         album_image = imageBank.get(item.Index)
-        #print(item.Name)
         if album_image is None:
+            print("unknown name " + item.Name)
+            #item.del_item()
             continue
         image_rect = album_image.get_rect()  # scaling
         delta_x, delta_y = get_delta(image_rect)

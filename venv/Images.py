@@ -14,4 +14,6 @@ class ImageBank:
         del self.Images[index]
 
     def get(self, index):
+        if index < 0 or index > len(self.Images) - 1:
+            return None
         return self.Images[index]

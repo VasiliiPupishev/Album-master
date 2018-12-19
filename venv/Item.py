@@ -19,6 +19,9 @@ class Item:
             del self
             return None
 
+    def del_item(self):
+        del self
+
     def __init__(self, image, name, location):
         self.Name = name
         # self.Image = image

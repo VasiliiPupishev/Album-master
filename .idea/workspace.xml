@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="hellokkk">
+    <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images.py" beforeDir="false" afterPath="$PROJECT_DIR$/Images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/FindSame.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/FindSame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3)copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3)copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/111copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/16copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/17copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/1copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/29copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/2copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/3copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/3copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/5-copy(1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/6copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/6copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/7copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/8copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/8copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/9copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (14) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (14).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (15) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (15).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (16) - Copy - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copy - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (20) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (20).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (21) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (21) - Copycopy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (22) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (24) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Item.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/data.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/venv/data.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,15 +80,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1545231400962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1545243388377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="372" column="9" selection-start-line="372" selection-start-column="9" selection-end-line="372" selection-end-column="9" />
+            <state relative-caret-position="699">
+              <caret line="374" column="31" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -29,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
+            <state relative-caret-position="280">
               <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -38,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+            <state relative-caret-position="289">
+              <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -65,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Album.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="212">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="21" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -89,8 +156,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/AddAlbum.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="253">
+              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -101,17 +168,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Item.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            <state relative-caret-position="146">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Images.py">
+        <entry file="file://$PROJECT_DIR$/venv/Images.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -151,14 +218,15 @@
         <option value="$PROJECT_DIR$/venv/DilogWindow.py" />
         <option value="$PROJECT_DIR$/venv/config" />
         <option value="$PROJECT_DIR$/venv/Rename.py" />
-        <option value="$PROJECT_DIR$/venv/AddAlbum.py" />
         <option value="$PROJECT_DIR$/venv/RootClass.py" />
         <option value="$PROJECT_DIR$/Images.py" />
         <option value="$PROJECT_DIR$/venv/Album.py" />
-        <option value="$PROJECT_DIR$/venv/Item.py" />
         <option value="$PROJECT_DIR$/venv/FindItem.py" />
-        <option value="$PROJECT_DIR$/venv/main.py" />
+        <option value="$PROJECT_DIR$/venv/Item.py" />
         <option value="$PROJECT_DIR$/venv/FindSame.py" />
+        <option value="$PROJECT_DIR$/venv/Images.py" />
+        <option value="$PROJECT_DIR$/venv/main.py" />
+        <option value="$PROJECT_DIR$/venv/AddAlbum.py" />
       </list>
     </option>
   </component>
@@ -202,6 +270,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dudya\Desktop\Album-master\venv" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -260,7 +333,7 @@
       <workItem from="1544650721419" duration="15544000" />
       <workItem from="1544733527631" duration="3824000" />
       <workItem from="1545033788867" duration="2742000" />
-      <workItem from="1545119916603" duration="14905000" />
+      <workItem from="1545119916603" duration="24873000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -465,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545036048110</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="hellokkk">
+      <created>1545233127979</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1545233127979</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172641000" />
+    <option name="totallyTimeSpent" value="182609000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,7 +569,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6475038" visible="true" weight="0.23502304" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6475038" visible="true" weight="0.22427036" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.698941" weight="0.39938557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -563,34 +643,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/AddAlbum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/DilogWindow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Item.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -604,19 +660,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Album.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="212">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/AddAlbum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
+        <state relative-caret-position="280">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -626,18 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="372" column="9" selection-start-line="372" selection-start-column="9" selection-end-line="372" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="699">
+          <caret line="374" column="31" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
         </state>
       </provider>
     </entry>
