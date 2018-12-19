@@ -9,6 +9,7 @@ from skimage.measure import compare_ssim as ssim
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
+import pickle
 
 
 # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
@@ -49,9 +50,6 @@ class Same:
 
     def find_copy(self, per, image_bank):
         number = 0
-        print(len(self.items))
-        import time
-        time.sleep(4)
         for image in self.items:
             try:
                 if not self.in_res(image) or type(image) is not Item:
@@ -61,8 +59,7 @@ class Same:
                 image_origin = cv2.resize(image_origin, (200, 200))
                 image_origin = cv2.cvtColor(image_origin, cv2.COLOR_BGR2GRAY)
                 temp = Album("set №" + str(number), "set1")
-                temp.Index = image_bank.append(temp.get_image())
-                #print(temp)
+                temp.Index = 0
                 number += 1
                 for image1 in self.items:
                     image1_origin = cv2.imread(os.getcwd() + "\\" + image1.Location + "\\" + image1.Name)
@@ -71,11 +68,9 @@ class Same:
                     res = ssim(image_origin, image1_origin)
                     if res >= 1 - per:
                         self.res[image].append(image1)
-                        #print(image1.Name)
                         self.Album.add_item(image1)
                         temp.add_item(image1)
                 self.Albums.append(temp)
-                #print(temp.Name)
             except Exception:
                 continue
 
@@ -93,24 +88,21 @@ class Same:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    with open('data.pickle', 'wb') as f:
+                        pickle.dump(root, f)
                     raise SystemExit
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
                         fl = self.search_events(event.pos, screen, root, im_Bank)
                         if type(fl) is not str and fl:
                             if self.Flag:
-                                print("---------------------------------------------------------------------------")
-                                #print(root.get_current_album(False))
                                 if root.get_current_album(False) is None:
-                                    #print(len(self.Albums))
                                     for item in self.Albums:
                                         root.add_album(item)
                                 else:
-                                    print("this album")
                                     for item in self.Albums:
                                         print(root.get_current_album(False).Name)
                                         root.get_current_album(False).add_item(item)
-                                print(self.Albums)
                                 return True
                             return False
                         elif fl == "exit":

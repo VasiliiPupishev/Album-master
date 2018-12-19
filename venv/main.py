@@ -146,7 +146,7 @@ def print_not_result(root):
 def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
-    fl = same.print_filter(screen, root, imageBank)
+    fl = same.find_copy(screen, root, imageBank)
     if fl:
         if root.get_current_album(False) is not None:
             print_albums(root.get_current_album(False))

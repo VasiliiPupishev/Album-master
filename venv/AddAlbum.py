@@ -4,6 +4,7 @@ import copy
 import pygame
 from Item import Item
 import os
+import pickle
 
 
 class AddAlbum:
@@ -40,6 +41,8 @@ class AddAlbum:
        while True:
            for event in pygame.event.get():
                if event.type == pygame.QUIT:
+                   with open('data.pickle', 'wb') as f:
+                       pickle.dump(root, f)
                    raise SystemExit
                if event.type == pygame.MOUSEBUTTONDOWN:
                    if event.button == 1:
