@@ -14,6 +14,7 @@ class Album:
     # Image = None
     Pointer = 0
     MousePointer = None
+    Index = -1
 
     def __init__(self, name, location):
         self.Items = [[]]

@@ -23,8 +23,9 @@ pygame.display.set_icon(logo)
 
 from Images import ImageBank
 
+imageBank = ImageBank()
+
 def main():
-    imageBank = ImageBank()
     draw_loading()
     background_image = pygame.image.load('Backgrounds\\index.jpg').convert_alpha()
     background_image = pygame.transform.scale(background_image, SCREEN_RESOLUTION)
@@ -33,6 +34,7 @@ def main():
     try:
         with open('data.pickle', 'rb') as f:
             root = pickle.load(f)
+            full_image_bank(imageBank, root)
     except Exception:
         root = Root(DIR, "Images")
         root.init("Images", root.Albums[0], True)
@@ -46,7 +48,7 @@ def main():
         TIMER += 1
         if TIMER == 5000:
             TIMER = 0
-            print(root.update("Images"))
+            #print(root.update("Images"))
             if root.update("Images"):
                 if root.get_current_album(False) is None:
                     print_albums(root)
@@ -88,6 +90,15 @@ def main():
         pygame.display.update()
     pygame.quit()
     sys.exit()
+
+
+def full_image_bank(imageBank, root):
+    for line_a in root.Albums:
+        for alb in line_a:
+            alb.Index = imageBank.append(alb.get_image())
+            for line_i in alb.Items:
+                for item in line_i:
+                    item.Index = imageBank.append(item.get_image())
 
 
 def delete_item(root, screen):
@@ -135,7 +146,7 @@ def print_not_result(root):
 def find_copy(root, screen):
     from FindSame import Same
     same = Same(root)
-    fl = same.print_filter(screen, root)
+    fl = same.print_filter(screen, root, imageBank)
     if fl:
         if root.get_current_album(False) is not None:
             print_albums(root.get_current_album(False))
@@ -239,7 +250,7 @@ def draw_loading():
 
 
 def search_event(root, pos):
-    print(root.List_Current)
+    #print(root.List_Current)
     x, y = pos
     if y < 33 and x < 33:
         if root.get_current_album(False) is not None:
@@ -357,7 +368,9 @@ def print_albums(album):
     mousePointer = pygame.image.load('Backgrounds/sq.png').convert_alpha()
     mousePointer = pygame.transform.scale(mousePointer, (PLATE_SIZE[0] + 3, PLATE_SIZE[1] + 3))
     for item in current_album:
-        album_image = item.get_image()
+        #print(item.Index)
+        album_image = imageBank.get(item.Index)
+        #print(item.Name)
         if album_image is None:
             continue
         image_rect = album_image.get_rect()  # scaling
