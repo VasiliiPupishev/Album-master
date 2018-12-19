@@ -2,75 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fd891f6-68e8-4665-a088-a32623f88d0c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Images.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/FindSame.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/FindSame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3)copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1 - Copy (3)copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/111copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/16copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/17copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/1copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2 - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/29copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/2copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/3copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/3copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/5-copy(1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/6copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/6copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/7copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/8copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/8copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/9copy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (14) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (15) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (16) - Copy - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copy - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19) - Copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (19).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (20) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (20).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (21) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (21) - Copycopy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (22) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (24) - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Item.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/data.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/venv/data.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/AddAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/AddAlbum.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/0copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/4copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/7copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (17) - Copy - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (17) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Images/n/Screenshot (18) - Copy - Copy.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,15 +22,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1545243388377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/Album_master$main.coverage" NAME="main Coverage Results" MODIFIED="1545248468350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="699">
-              <caret line="374" column="31" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+            <state relative-caret-position="408">
+              <caret line="58" column="52" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -108,7 +50,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="340">
               <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -225,8 +167,8 @@
         <option value="$PROJECT_DIR$/venv/Item.py" />
         <option value="$PROJECT_DIR$/venv/FindSame.py" />
         <option value="$PROJECT_DIR$/venv/Images.py" />
-        <option value="$PROJECT_DIR$/venv/main.py" />
         <option value="$PROJECT_DIR$/venv/AddAlbum.py" />
+        <option value="$PROJECT_DIR$/venv/main.py" />
       </list>
     </option>
   </component>
@@ -333,7 +275,7 @@
       <workItem from="1544650721419" duration="15544000" />
       <workItem from="1544733527631" duration="3824000" />
       <workItem from="1545033788867" duration="2742000" />
-      <workItem from="1545119916603" duration="24873000" />
+      <workItem from="1545119916603" duration="30097000" />
     </task>
     <task id="LOCAL-00001" summary="photo album">
       <created>1543326431417</created>
@@ -545,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545233127979</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="hellokkk">
+      <created>1545243588777</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1545243588778</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182609000" />
+    <option name="totallyTimeSpent" value="187833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -684,9 +633,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/FindSame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="340">
           <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -704,20 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/RootClass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="374" column="31" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+        <state relative-caret-position="408">
+          <caret line="58" column="52" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
         </state>
       </provider>
     </entry>

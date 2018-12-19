@@ -25,6 +25,7 @@ from Images import ImageBank
 
 imageBank = ImageBank()
 
+
 def main():
     draw_loading()
     background_image = pygame.image.load('Backgrounds\\index.jpg').convert_alpha()
@@ -37,8 +38,6 @@ def main():
     except Exception:
         root = Root(DIR, "Images")
         root.init("Images", root.Albums[0], True)
-    root = Root(DIR, "Images")
-    root.init("Images", root.Albums[0], True)
     full_image_bank(imageBank, root)
     loading_caption = font.render("LOADING...", False, (0, 0, 0))
     screen.blit(background_image, (0, 0))
@@ -48,9 +47,8 @@ def main():
     TIMER = 0
     while not exit:
         TIMER += 1
-        if TIMER == 5000:
+        if TIMER == 3000:
             TIMER = 0
-            #print(root.update("Images"))
             if root.update("Images"):
                 if root.get_current_album(False) is None:
                     print_albums(root)
